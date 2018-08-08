@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
@@ -32,18 +33,18 @@ module.exports = {
             test: /\.css$/,
             loader: 'style-loader!css-loader'
         },
-        {
-            test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-            loader: 'url-loader?limit=10000&name=images/[name].[hash:8].[ext]'
-        },
-        {
-            test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-            loader: 'url-loader?limit=10000&name=fonts/[name].[hash:8].[ext]'
-        },
-        {
-            test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-            loader: 'url-loader?limit=10000&name=media/[name].[hash:8].[ext]'
-        }]
+            {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'url-loader?limit=10000&name=images/[name].[hash:8].[ext]'
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url-loader?limit=10000&name=fonts/[name].[hash:8].[ext]'
+            },
+            {
+                test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+                loader: 'url-loader?limit=10000&name=media/[name].[hash:8].[ext]'
+            }]
     },
     plugins: [
         new webpack.ProvidePlugin({
@@ -53,6 +54,9 @@ module.exports = {
             "window.$": 'jquery'
         }),
         new CleanWebpackPlugin(['dll']),
+        new CopyWebpackPlugin([
+            { from: 'src/externals' }
+        ]),
         new webpack.DllPlugin({
             path: resolve("dll/[name]-manifest.json"),
             name: "[name]_library",
@@ -68,6 +72,6 @@ module.exports = {
                 removeComments: true,
                 collapseWhitespace: false
             }
-        })        
+        })
     ]
 };

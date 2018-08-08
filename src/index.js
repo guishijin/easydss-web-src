@@ -4,13 +4,13 @@ import AdminLTE from './components/AdminLTE'
 import Index from './components/Index'
 
 new Vue({
-  el: '#app',
-  store,
-  template: `
+    el: '#app',
+    store,
+    template: `
   <AdminLTE>
     <Index></Index>
   </AdminLTE>`,
-  components: {
-    AdminLTE, Index
-  },
+    components: {
+        AdminLTE, Index
+    },
 })
