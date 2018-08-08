@@ -28,7 +28,7 @@
     export default {
         data() {
             return {
-                curentPage: 1,
+                currentPage: 1,
                 pageSize: 10,
                 tableData: [{
                     date: '2016-05-02',

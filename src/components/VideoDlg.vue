@@ -41,6 +41,7 @@ export default {
     components: { VideoJS },
     methods: {
         play(src,title) {
+            alert("开启播放器!!!!!!!!");
             this.videoUrl = src||"";
             this.videoTitle = title||"";
 

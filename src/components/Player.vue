@@ -18,31 +18,34 @@
 </template>
 
 <script>
-    import Vue from 'vue'
-    import { Message } from 'element-ui'
+import Vue from 'vue'
+import { Message } from 'element-ui'
 
-    Vue.prototype.$message = Message;
+Vue.prototype.$message = Message;
 
-    export default {
-        name: 'Player',
-        data() {
-            return {
-                url: ""
+export default {
+    name: 'Player',
+    data() {
+        return {
+            url: ""
+        }
+    },
+    methods: {
+        play() {
+            if (!this.url) {
+                this.$message({
+                    type: 'error',
+                    message: "播放地址不能为空"
+                });
+                return;
             }
-        },
-        methods: {
-            play() {
-                if (!this.url) {
-                    this.$message({
-                        type: 'error',
-                        message: "播放地址不能为空"
-                    });
-                    return;
-                }
-                this.$emit("play", { videoUrl: this.url, videoTitle: this.url});
-            }
+            debugger;
+            alert("播放地址正常!!!!!!! url = "+this.url);
+            this.$emit("play", { videoUrl: this.url, videoTitle: this.url});
+            debugger;
         }
     }
+}
 </script>
 
 <style scoped>
