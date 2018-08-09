@@ -39,10 +39,8 @@ export default {
                 });
                 return;
             }
-            debugger;
             alert("播放地址正常!!!!!!! url = "+this.url);
             this.$emit("play", { videoUrl: this.url, videoTitle: this.url});
-            debugger;
         }
     }
 }

@@ -9,7 +9,7 @@ export default {
     props: {
         btnText: {
             type: String,
-            default: ""
+            default: "点我向父组件发送消息（即通过$emit触发父组件的btnClick事件）"
         }
     },
     methods: {

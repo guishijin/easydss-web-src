@@ -22,7 +22,6 @@
     import "admin-lte/dist/js/app.js"
 
     import { mapState } from "vuex"
-    import Vue from 'vue'
 
     import Sider from 'components/Sider'
     import NaviBar from 'components/NaviBar'
@@ -52,6 +51,9 @@
         methods: {
             btnClick(msg){
                 alert(msg);
+            },
+            play(video){
+                alert("Player.vue组件的父组件接收到 Player组件的消息!");
             }
         }
     }

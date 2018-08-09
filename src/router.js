@@ -4,7 +4,8 @@ import AdminLTE from 'components/AdminLTE.vue'
 
 import Index from 'components/Index.vue'
 // import Player from 'components/Player.vue'
-const Player = () => import(/* webpackChunkName: 'player' */ 'components/Player.vue')
+// const Player = () => import(/* webpackChunkName: 'player' */ 'components/Player.vue')
+const PlayerDlg = () => import(/* webpackChunkName: 'playerDlg' */ 'components/PlayerDlg.vue')
 const About = () => import(/* webpackChunkName: 'about' */ 'components/About.vue')
 
 Vue.use(Router);
@@ -20,7 +21,7 @@ const router = new Router({
                     component: Index
                 }, {
                     path: 'player',
-                    component: Player
+                    component: PlayerDlg
                 }, {
                     path: 'about',
                     component: About
