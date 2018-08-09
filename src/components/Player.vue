@@ -27,7 +27,7 @@ export default {
     name: 'Player',
     data() {
         return {
-            url: ""
+            url: "http://172.16.10.10:8888/hls/v1/token1/hls.m3u8"
         }
     },
     methods: {
