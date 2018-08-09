@@ -21,10 +21,11 @@ export default {
     },
     methods: {
         btnClick(msg){
-            alert(msg);
+            alert("PlayerDlg"+msg);
         },
         play(video){
-            alert("Player.vue组件的父组件接收到 Player组件的消息!");
+            this.$emit("play", video);
+            alert("PlayerDlg:   Player.vue组件的父组件接收到 Player组件的消息!");
             this.$refs.videoDlg.play(video.videoUrl, video.videoTitle);
         }
     }

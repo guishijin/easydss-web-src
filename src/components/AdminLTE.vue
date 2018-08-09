@@ -5,7 +5,7 @@
         <div class="content-wrapper">
             <section class="content">
                 <transition>
-                    <router-view @btnClick="btnClick"></router-view>
+                    <router-view @btnClick="btnClick" @play="play"></router-view>
                 </transition>
             </section>
         </div>
@@ -50,10 +50,10 @@
         },
         methods: {
             btnClick(msg){
-                alert(msg);
+                alert("AdminLTE:  " + msg);
             },
             play(video){
-                alert("Player.vue组件的父组件接收到 Player组件的消息!");
+                alert("AdminLTE:  Player.vue组件的父组件接收到 Player组件的消息!");
             }
         }
     }
