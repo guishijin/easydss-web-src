@@ -10,6 +10,18 @@ function resolve(dir) {
 }
 
 module.exports = {
+    devServer: {
+        host: '0.0.0.0',
+        useLocalIp: true,
+        open: true,
+        openPage: "",
+        proxy: {
+            "*": {
+                target: 'http://xxx',
+                secure: false
+            }
+        }
+    },
     //定义页面的入口, 因为js中将要使用es6语法, 所以这里需要依赖 babel 垫片
     entry: {
         index: ['babel-polyfill', './src/index.js']
